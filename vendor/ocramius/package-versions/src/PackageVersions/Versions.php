@@ -57,6 +57,7 @@ final class Versions
   'symfony/dependency-injection' => 'v5.1.2@6508423eded583fc07e88a0172803e1a62f0310c',
   'symfony/deprecation-contracts' => 'v2.1.3@5e20b83385a77593259c9f8beb2c43cd03b2ac14',
   'symfony/doctrine-bridge' => 'v5.1.2@997377af37ae96565bf2aea127fb2b6285cd0d51',
+  'symfony/dotenv' => 'v5.1.2@42d2a18597f4c7cafc0e25b1ad6a1cbb4f2caf05',
   'symfony/error-handler' => 'v5.1.2@7d0b927b9d3dc41d7d46cda38cbfcd20cdcbb896',
   'symfony/event-dispatcher' => 'v5.1.2@cc0d059e2e997e79ca34125a52f3e33de4424ac7',
   'symfony/event-dispatcher-contracts' => 'v2.1.3@f6f613d74cfc5a623fc36294d3451eb7fa5a042b',
@@ -81,7 +82,9 @@ final class Versions
   'webimpress/safe-writer' => '2.0.1@d6e879960febb307c112538997316371f1e95b12',
   'zendframework/zend-servicemanager' => '3.4.0@a1ed6140d0d3ee803fec96582593ed024950067b',
   'zendframework/zend-stdlib' => '3.2.1@66536006722aff9e62d1b331025089b7ec71c065',
-  '__root__' => 'No version set (parsed as 1.0.0)@',
+  'nikic/php-parser' => 'v4.6.0@c346bbfafe2ff60680258b631afb730d186ed864',
+  'symfony/maker-bundle' => 'v1.19.0@bea8c3c959e48a2c952cc7c4f4f32964be8b8874',
+  '__root__' => 'dev-master@3a91d0b2bb5cc0eb7894f9604cfa962954bc94a5',
 );
 
     private function __construct()

@@ -10,6 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use App\CSV\Makecsv;
 use Exception;
 use DateTime;
+//use Config\builder\Querybuilder;
 
 
 class PlanningCommand extends Command
@@ -44,6 +45,11 @@ class PlanningCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+      //  $query = new Querybuilder();
+
+
+
+
         try{
 
             if(isset($this->activity) && is_array($this->activity)){

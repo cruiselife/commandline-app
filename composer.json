@@ -4,7 +4,9 @@
         "symfony/console": "^5.1",
         "zendframework/zend-servicemanager": "^3.4",
         "symfony/orm-pack": "^1.0",
-        "league/csv": "^9.6"
+        "league/csv": "^9.6",
+        "symfony/framework-bundle": "^5.1",
+        "symfony/dotenv": "^5.1"
     },
     "autoload": {
         "psr-4": {

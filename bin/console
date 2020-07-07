@@ -5,6 +5,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\Console\Application;
 use Console\App\Commands\PlanningCommand;
 
+
+
 $app = new Application();
 $app->add(new PlanningCommand());
 $app->run();
