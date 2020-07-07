@@ -1,0 +1,14 @@
+#!C:\wamp\bin\php\php7.3.12\php.exe -q
+<?php
+var_dump("goed");
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+var_dump($app);
+
+
+
+
+$app->run;
