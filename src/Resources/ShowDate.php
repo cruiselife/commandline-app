@@ -2,8 +2,6 @@
 namespace App\Resources;
 
 use DateTime;
-//use Config\builder\Querybuilder;
-
 
 class ShowDate{
 
