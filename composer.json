@@ -11,5 +11,8 @@
             "Console\\": "src"
         },
         "classmap": ["src", "Config"]
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.19"
     }
 }
