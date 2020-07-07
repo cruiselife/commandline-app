@@ -84,7 +84,7 @@ final class Versions
   'zendframework/zend-stdlib' => '3.2.1@66536006722aff9e62d1b331025089b7ec71c065',
   'nikic/php-parser' => 'v4.6.0@c346bbfafe2ff60680258b631afb730d186ed864',
   'symfony/maker-bundle' => 'v1.19.0@bea8c3c959e48a2c952cc7c4f4f32964be8b8874',
-  '__root__' => 'dev-master@3a91d0b2bb5cc0eb7894f9604cfa962954bc94a5',
+  '__root__' => 'dev-master@7b0831e7d5b5da419362fe81844fe9ed949873a8',
 );
 
     private function __construct()

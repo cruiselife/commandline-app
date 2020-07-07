@@ -10,28 +10,13 @@ use Symfony\Component\Console\Input\InputArgument;
 use App\CSV\Makecsv;
 use Exception;
 use DateTime;
-//use Config\builder\Querybuilder;
+use Config\Connect\Connection;
+use Config\builder\Querybuilder;
 
 
 class PlanningCommand extends Command
 {
-    private $activity = [
-                            0=>[
-                                "activity"=>'Stofzuigen',
-                                "when"=>'Tuesday,Thursday',
-                                'duration'=>21
-                            ],
-                            1=>[
-                                "activity"=>'ramen_lappen',
-                                "when"=>'last day month',
-                                'duration'=>35
-                            ],
-                            2=>[
-                                "activity"=>'koelkast_schoonmaken',
-                                "when"=>'first day month',
-                                'duration'=>50
-                            ]
-                        ];
+    private $aActivity;
 
     private $aDates;
 
@@ -45,14 +30,12 @@ class PlanningCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-      //  $query = new Querybuilder();
-
-
-
+        $query = new Querybuilder();
+        $this->aActivity = $query->selectAll('activities');
 
         try{
 
-            if(isset($this->activity) && is_array($this->activity)){
+            if(isset($this->aActivity) && is_array($this->aActivity)){
 
                 //Haal de data op
                 $oShowDate = new ShowDate();
@@ -62,7 +45,7 @@ class PlanningCommand extends Command
                 // Maak de planning
                 $oPlanning = new MakePlanning();
                 $oPlanning->setDate($this->aDates);
-                $oPlanning->setActivities($this->activity);
+                $oPlanning->setActivities($this->aActivity);
                 $oPlanning->Make();
                 $aPlanning = $oPlanning->getPlanning();
 

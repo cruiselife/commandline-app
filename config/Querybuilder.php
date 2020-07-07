@@ -1,16 +1,18 @@
 <?php
 namespace Config\builder;
 
+use Config\Connect\Connection;
+use \PDO;
 
 class Querybuilder{
 
     protected $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct()
     {
 
-        var_dump($pdo);
-        $this->pdo = $pdo;
+        $this->pdo = Connection::make();
+
     }
 
     public function selectAll($table){
@@ -18,7 +20,7 @@ class Querybuilder{
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function insert($data, $table){

@@ -33,12 +33,12 @@ class MakePlanning{
         foreach($oShowDate->arrayDates() as $date){
 
             $oDate = new DateTime($date);
-            $aDay[$i]['datum'] = $oDate->format('Y-m-d');
+            $aDay[$i]['datum'] = $oDate->format('d-m-Y');
             $aDay[$i]['werkzaamheden'] = "";
             $duration = 0;
 
             foreach($this->aActivities as $activity){
-                $when = explode(',', $activity["when"]);
+                $when = explode(',', $activity["wanneer"]);
 
 
                 if(in_array($oDate->format('l'), $when) == true){
@@ -48,14 +48,14 @@ class MakePlanning{
                     $duration = $duration + $activity["duration"];
                 }
 
-                if($oShowDate->firstDayMonth($date) == $oDate->format('Y-m-d') && $activity["when"] == 'first day month'){
+                if($oShowDate->firstDayMonth($date) == $oDate->format('Y-m-d') && $activity["wanneer"] == 'first day month'){
 
                     $aDay[$i]['werkzaamheden'] = strlen($aDay[$i]['werkzaamheden']) > 0 ? $aDay[$i]['werkzaamheden'].", ".$activity["activity"] : $activity["activity"] ;
 
                     $duration = $duration + $activity["duration"];
                 }
 
-                if($oShowDate->lastDayMonth($date) == $oDate->format('Y-m-d') && $activity["when"] == 'last day month'){
+                if($oShowDate->lastDayMonth($date) == $oDate->format('Y-m-d') && $activity["wanneer"] == 'last day month'){
 
                     $aDay[$i]['werkzaamheden'] = strlen($aDay[$i]['werkzaamheden']) > 0 ? $aDay[$i]['werkzaamheden'].", ".$activity["activity"] : $activity["activity"] ;
 
