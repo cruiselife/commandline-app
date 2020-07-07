@@ -2,7 +2,7 @@
 namespace App\Planning;
 
 use DateTime;
-use App\Resources\ShowDate;
+use App\Resources\GenerateDates;
 
 class MakePlanning{
 
@@ -25,7 +25,7 @@ class MakePlanning{
      */
     public function make()
     {
-        $oShowDate = new ShowDate();
+        $oShowDate = new GenerateDates();
         $oShowDate->getDates();
 
         $aDay = [];

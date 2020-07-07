@@ -336,7 +336,7 @@ class ComposerStaticInit08782836afd9fa415affe90b0760f776
     public static $classMap = array (
         'App\\CSV\\Makecsv' => __DIR__ . '/../..' . '/src/Resources/Makecsv.php',
         'App\\Planning\\MakePlanning' => __DIR__ . '/../..' . '/src/Resources/MakePlanning.php',
-        'App\\Resources\\ShowDate' => __DIR__ . '/../..' . '/src/Resources/ShowDate.php',
+        'App\\Resources\\GenerateDates' => __DIR__ . '/../..' . '/src/Resources/GenerateDates.php',
         'Config\\Connect\\Connection' => __DIR__ . '/../..' . '/Config/Connection.php',
         'Config\\builder\\Querybuilder' => __DIR__ . '/../..' . '/Config/Querybuilder.php',
         'Console\\App\\Commands\\PlanningCommand' => __DIR__ . '/../..' . '/src/App/Commands/PlanningCommand.php',

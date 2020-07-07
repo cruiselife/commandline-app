@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\CSV\\Makecsv' => $baseDir . '/src/Resources/Makecsv.php',
     'App\\Planning\\MakePlanning' => $baseDir . '/src/Resources/MakePlanning.php',
-    'App\\Resources\\ShowDate' => $baseDir . '/src/Resources/ShowDate.php',
+    'App\\Resources\\GenerateDates' => $baseDir . '/src/Resources/GenerateDates.php',
     'Config\\Connect\\Connection' => $baseDir . '/Config/Connection.php',
     'Config\\builder\\Querybuilder' => $baseDir . '/Config/Querybuilder.php',
     'Console\\App\\Commands\\PlanningCommand' => $baseDir . '/src/App/Commands/PlanningCommand.php',

@@ -2,7 +2,7 @@
 namespace App\CSV;
 
 use DateTime;
-use App\Resources\ShowDate;
+use App\Resources\GenerateDates;
 use League\Csv\Reader;
 use League\Csv\Statement;
 use League\Csv\writer;
@@ -25,22 +25,25 @@ class Makecsv{
         $this->sFilename = $sValue;
     }
 
+    /**
+     * @throws \League\Csv\CannotInsertRecord
+     *
+     * Maak csv bestand en sla het op
+     */
     public function CSV()
     {
-        $this->header();
+        $this->getHeader();
 
         $writer = Writer::createFromPath('csvfiles/'.$this->sFilename.'.csv', 'w+');
         $writer->insertOne($this->aHeaders);
-        $writer->insertAll($this->aInputArray); //using an array
+        $writer->insertAll($this->aInputArray);
 
     }
 
-    private function header(){
+    /**
+     * Maak de header(koppen) voor het csv
+     */
+    private function getHeader(){
         $this->aHeaders = array_keys($this->aInputArray[0]);
     }
-
-
-
-
-
 }

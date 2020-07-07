@@ -2,7 +2,7 @@
 namespace Console\App\Commands;
 
 use App\Planning\MakePlanning;
-use App\Resources\ShowDate;
+use App\Resources\GenerateDates;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -10,7 +10,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use App\CSV\Makecsv;
 use Exception;
 use DateTime;
-use Config\Connect\Connection;
 use Config\builder\Querybuilder;
 
 
@@ -30,6 +29,7 @@ class PlanningCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        // Haal de activiteiten op uit de database
         $query = new Querybuilder();
         $this->aActivity = $query->selectAll('activities');
 
@@ -37,8 +37,8 @@ class PlanningCommand extends Command
 
             if(isset($this->aActivity) && is_array($this->aActivity)){
 
-                //Haal de data op
-                $oShowDate = new ShowDate();
+                //Maak de data (tijd) op voor 3 maanden
+                $oShowDate = new GenerateDates();
                 $oShowDate->getDates();
                 $this->aDates = $oShowDate->arrayDates();
 
