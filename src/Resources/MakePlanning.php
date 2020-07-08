@@ -40,14 +40,15 @@ class MakePlanning{
             foreach($this->aActivities as $activity){
                 $when = explode(',', $activity["wanneer"]);
 
-
+                // Activiteit op bepaalde dagen
                 if(in_array($oDate->format('l'), $when) == true){
 
-                    $aDay[$i]['werkzaamheden'] = $activity["activity"];
+                    $aDay[$i]['werkzaamheden'] = strlen($aDay[$i]['werkzaamheden']) > 0 ? $aDay[$i]['werkzaamheden'].", ".$activity["activity"] : $activity["activity"] ;
 
                     $duration = $duration + $activity["duration"];
                 }
 
+                // Activiteit op de eerste werkdag
                 if($oShowDate->firstDayMonth($date) == $oDate->format('Y-m-d') && $activity["wanneer"] == 'first day month'){
 
                     $aDay[$i]['werkzaamheden'] = strlen($aDay[$i]['werkzaamheden']) > 0 ? $aDay[$i]['werkzaamheden'].", ".$activity["activity"] : $activity["activity"] ;
@@ -55,6 +56,7 @@ class MakePlanning{
                     $duration = $duration + $activity["duration"];
                 }
 
+                // Activiteit op de laatste werkdag
                 if($oShowDate->lastDayMonth($date) == $oDate->format('Y-m-d') && $activity["wanneer"] == 'last day month'){
 
                     $aDay[$i]['werkzaamheden'] = strlen($aDay[$i]['werkzaamheden']) > 0 ? $aDay[$i]['werkzaamheden'].", ".$activity["activity"] : $activity["activity"] ;

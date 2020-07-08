@@ -35,6 +35,7 @@ class Makecsv{
         $this->getHeader();
 
         $writer = Writer::createFromPath('csvfiles/'.$this->sFilename.'.csv', 'w+');
+        $writer->setDelimiter(';');
         $writer->insertOne($this->aHeaders);
         $writer->insertAll($this->aInputArray);
 

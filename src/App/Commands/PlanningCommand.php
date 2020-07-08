@@ -55,7 +55,7 @@ class PlanningCommand extends Command
                 $oMakecsv = new Makecsv();
                 $oMakecsv->setInputArray($aPlanning);
                 $oMakecsv->setFileName("planning_".$oDate->format('d-m-Y'));
-                $oMakecsv->CSV(); // CSV files wordt gegenereerd in csvfiles/planning.csv
+                $oMakecsv->CSV(); // CSV files wordt gegenereerd in csvfiles/planning_.'met een datum'.csv
 
                 //  $output->writeln(sprintf('Hello World!, %s', $input->getArgument('username')));
 

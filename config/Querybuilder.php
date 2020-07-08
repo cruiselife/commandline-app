@@ -10,27 +10,20 @@ class Querybuilder{
 
     public function __construct()
     {
-
         $this->pdo = Connection::make();
 
     }
 
-    public function selectAll($table){
+    /**
+     * @param $table
+     * @return array
+     */
+    public function selectAll($table): array
+    {
         $statement  = $this->pdo->prepare("select * from {$table}");
 
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function insert($data, $table){
-
-        $insertQuery = "insert into {$table} (description, completed) values ('".$data['description']. "', 0)";
-        
-        $statement  = $this->pdo->prepare($insertQuery);
-
-        $statement->execute();
-
-       // return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
     }
 }
